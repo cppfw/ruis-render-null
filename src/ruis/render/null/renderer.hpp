@@ -33,7 +33,7 @@ class renderer : public ruis::render::renderer
 {
 public:
 	renderer() :
-		ruis::render::renderer(std::make_unique<factory>(), params())
+		ruis::render::renderer(std::make_unique<ruis::render::null::factory>(), params())
 	{}
 
 	void clear_framebuffer_color() override {}
