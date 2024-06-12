@@ -19,14 +19,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 /* ================ LICENSE END ================ */
 
-#include "null_renderer.hpp"
+#include "renderer.hpp"
 
 using namespace ruis::render::null;
-
-null_vertex_array::null_vertex_array() :
-	ruis::render::vertex_array(
-		{utki::make_shared<null_vertex_buffer>()},
-		utki::make_shared<null_index_buffer>(),
-		ruis::render::vertex_array::mode::triangles
-	)
-{}
