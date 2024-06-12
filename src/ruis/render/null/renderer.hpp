@@ -25,7 +25,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <ruis/render/renderer.hpp>
 
-#include "render_factory.hpp"
+#include "factory.hpp"
 
 namespace ruis::render::null {
 
@@ -33,7 +33,7 @@ class renderer : public ruis::render::renderer
 {
 public:
 	renderer() :
-		ruis::render::renderer(std::make_unique<render_factory>(), params())
+		ruis::render::renderer(std::make_unique<factory>(), params())
 	{}
 
 	void clear_framebuffer_color() override {}

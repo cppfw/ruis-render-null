@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#include <ruis/render/render_factory.hpp>
+#include <ruis/render/factory.hpp>
 
 #include "frame_buffer.hpp"
 #include "texture_2d.hpp"
@@ -31,7 +31,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 namespace ruis::render::null {
 
-class render_factory : public ruis::render::render_factory
+class factory : public ruis::render::factory
 {
 public:
 	utki::shared_ref<ruis::render::frame_buffer> create_framebuffer(
@@ -50,7 +50,7 @@ public:
 		return utki::make_shared<index_buffer>();
 	}
 
-	std::unique_ptr<ruis::render::render_factory::shaders> create_shaders() override
+	std::unique_ptr<ruis::render::factory::shaders> create_shaders() override
 	{
 		return nullptr;
 	}

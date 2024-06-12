@@ -19,11 +19,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 /* ================ LICENSE END ================ */
 
-#include "render_factory.hpp"
+#include "factory.hpp"
 
 using namespace ruis::render::null;
 
-utki::shared_ref<ruis::render::frame_buffer> render_factory::create_framebuffer(
+utki::shared_ref<ruis::render::frame_buffer> factory::create_framebuffer(
 	std::shared_ptr<ruis::render::texture_2d> color,
 	std::shared_ptr<ruis::render::texture_depth> depth,
 	std::shared_ptr<ruis::render::texture_stencil> stencil
