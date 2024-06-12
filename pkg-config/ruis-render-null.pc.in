@@ -1,0 +1,9 @@
+Name: ruis-render-null   # human-readable name
+Description: C++ null renderer for ruis GUI library
+Version: $(version)
+URL: https://github.com/cppfw/ruis-render-null
+Requires:
+Conflicts:
+Libs: -lruis-render-null
+Libs.private:
+Cflags:
