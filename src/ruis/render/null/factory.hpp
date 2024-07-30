@@ -111,19 +111,22 @@ public:
 		return utki::make_shared<vertex_buffer>();
 	}
 
-	utki::shared_ref<ruis::render::vertex_buffer> create_vertex_buffer(utki::span<const r4::vector2<float>> vertices
+	utki::shared_ref<ruis::render::vertex_buffer> create_vertex_buffer(
+		utki::span<const r4::vector2<float>> vertices
 	) override
 	{
 		return utki::make_shared<vertex_buffer>();
 	}
 
-	utki::shared_ref<ruis::render::vertex_buffer> create_vertex_buffer(utki::span<const r4::vector3<float>> vertices
+	utki::shared_ref<ruis::render::vertex_buffer> create_vertex_buffer(
+		utki::span<const r4::vector3<float>> vertices
 	) override
 	{
 		return utki::make_shared<vertex_buffer>();
 	}
 
-	utki::shared_ref<ruis::render::vertex_buffer> create_vertex_buffer(utki::span<const r4::vector4<float>> vertices
+	utki::shared_ref<ruis::render::vertex_buffer> create_vertex_buffer(
+		utki::span<const r4::vector4<float>> vertices
 	) override
 	{
 		return utki::make_shared<vertex_buffer>();
