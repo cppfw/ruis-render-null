@@ -28,7 +28,15 @@ namespace ruis::render::null {
 class frame_buffer : public ruis::render::frame_buffer
 {
 public:
-	frame_buffer();
+	const std::shared_ptr<ruis::render::texture_2d> color;
+	const std::shared_ptr<ruis::render::texture_depth> depth;
+	const std::shared_ptr<ruis::render::texture_stencil> stencil;
+
+	frame_buffer(
+		std::shared_ptr<ruis::render::texture_2d> color,
+		std::shared_ptr<ruis::render::texture_depth> depth,
+		std::shared_ptr<ruis::render::texture_stencil> stencil
+	);
 };
 
 } // namespace ruis::render::null

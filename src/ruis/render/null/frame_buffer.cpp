@@ -23,6 +23,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 using namespace ruis::render::null;
 
-frame_buffer::frame_buffer() :
-	ruis::render::frame_buffer(nullptr, nullptr, nullptr)
+frame_buffer::frame_buffer(
+	std::shared_ptr<ruis::render::texture_2d> color,
+	std::shared_ptr<ruis::render::texture_depth> depth,
+	std::shared_ptr<ruis::render::texture_stencil> stencil
+) :
+	ruis::render::frame_buffer(std::move(color), std::move(depth), std::move(stencil))
 {}
