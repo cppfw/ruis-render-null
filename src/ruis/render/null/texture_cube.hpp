@@ -21,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#include <rasterimage/image_variant.hpp>
 #include <ruis/render/texture_cube.hpp>
 
 namespace ruis::render::null {
@@ -28,7 +29,21 @@ namespace ruis::render::null {
 class texture_cube : public ruis::render::texture_cube
 {
 public:
-	texture_cube();
+	const rasterimage::image_variant positive_x;
+	const rasterimage::image_variant negative_x;
+	const rasterimage::image_variant positive_y;
+	const rasterimage::image_variant negative_y;
+	const rasterimage::image_variant positive_z;
+	const rasterimage::image_variant negative_z;
+
+	texture_cube(
+		rasterimage::image_variant&& positive_x,
+		rasterimage::image_variant&& negative_x,
+		rasterimage::image_variant&& positive_y,
+		rasterimage::image_variant&& negative_y,
+		rasterimage::image_variant&& positive_z,
+		rasterimage::image_variant&& negative_z
+	);
 };
 
 } // namespace ruis::render::null

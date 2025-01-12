@@ -23,6 +23,19 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 using namespace ruis::render::null;
 
-texture_cube::texture_cube() :
-	ruis::render::texture_cube()
+texture_cube::texture_cube(
+	rasterimage::image_variant&& positive_x,
+	rasterimage::image_variant&& negative_x,
+	rasterimage::image_variant&& positive_y,
+	rasterimage::image_variant&& negative_y,
+	rasterimage::image_variant&& positive_z,
+	rasterimage::image_variant&& negative_z
+) :
+	ruis::render::texture_cube(),
+	positive_x(std::move(positive_x)),
+	negative_x(std::move(negative_x)),
+	positive_y(std::move(positive_y)),
+	negative_y(std::move(negative_y)),
+	positive_z(std::move(positive_z)),
+	negative_z(std::move(negative_z))
 {}

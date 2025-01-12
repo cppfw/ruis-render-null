@@ -21,14 +21,25 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#include <cstdint>
+#include <variant>
+#include <vector>
+
 #include <ruis/render/index_buffer.hpp>
+#include <utki/span.hpp>
 
 namespace ruis::render::null {
 
 class index_buffer : public ruis::render::index_buffer
 {
 public:
-	index_buffer();
+	const std::variant<
+		std::vector<uint16_t>, //
+		std::vector<uint32_t>>
+		indices;
+
+	index_buffer(utki::span<const uint16_t> indices);
+	index_buffer(utki::span<const uint32_t> indices);
 };
 
 } // namespace ruis::render::null

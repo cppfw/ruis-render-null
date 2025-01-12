@@ -31,7 +31,11 @@ namespace ruis::render::null {
 class vertex_array : public ruis::render::vertex_array
 {
 public:
-	vertex_array();
+	vertex_array(
+		std::vector<utki::shared_ref<const ruis::render::vertex_buffer>> buffers,
+		utki::shared_ref<const ruis::render::index_buffer> indices,
+		ruis::render::vertex_array::mode rendering_mode
+	);
 };
 
 } // namespace ruis::render::null

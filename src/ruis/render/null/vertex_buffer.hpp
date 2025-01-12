@@ -21,14 +21,29 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#include <variant>
+#include <vector>
+
+#include <r4/vector.hpp>
 #include <ruis/render/vertex_buffer.hpp>
+#include <utki/span.hpp>
 
 namespace ruis::render::null {
 
 class vertex_buffer : public ruis::render::vertex_buffer
 {
 public:
-	vertex_buffer();
+	const std::variant<
+		std::vector<float>, //
+		std::vector<r4::vector2<float>>,
+		std::vector<r4::vector3<float>>,
+		std::vector<r4::vector4<float>>>
+		vertices;
+
+	vertex_buffer(utki::span<const float> vertices);
+	vertex_buffer(utki::span<const r4::vector2<float>> vertices);
+	vertex_buffer(utki::span<const r4::vector3<float>> vertices);
+	vertex_buffer(utki::span<const r4::vector4<float>> vertices);
 };
 
 } // namespace ruis::render::null

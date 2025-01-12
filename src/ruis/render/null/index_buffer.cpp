@@ -23,4 +23,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 using namespace ruis::render::null;
 
-index_buffer::index_buffer() = default;
+index_buffer::index_buffer(utki::span<const uint16_t> indices) :
+	indices(utki::make_vector(indices))
+{}
+
+index_buffer::index_buffer(utki::span<const uint32_t> indices) :
+	indices(utki::make_vector(indices))
+{}

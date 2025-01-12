@@ -23,6 +23,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 using namespace ruis::render::null;
 
-texture_depth::texture_depth() :
-	ruis::render::texture_depth(r4::vector2<uint32_t>(1, 2))
+texture_depth::texture_depth(r4::vector2<uint32_t> dims) :
+	ruis::render::texture_depth(dims)
 {}

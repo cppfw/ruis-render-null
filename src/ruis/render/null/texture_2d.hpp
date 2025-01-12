@@ -21,6 +21,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#include <rasterimage/image_variant.hpp>
+#include <ruis/render/factory.hpp>
 #include <ruis/render/texture_2d.hpp>
 
 namespace ruis::render::null {
@@ -28,7 +30,13 @@ namespace ruis::render::null {
 class texture_2d : public ruis::render::texture_2d
 {
 public:
-	texture_2d();
+	const ruis::render::factory::texture_2d_parameters params;
+	const rasterimage::image_variant image;
+
+	texture_2d(
+		rasterimage::image_variant image, //
+		ruis::render::factory::texture_2d_parameters params
+	);
 };
 
 } // namespace ruis::render::null

@@ -31,3 +31,107 @@ utki::shared_ref<ruis::render::frame_buffer> factory::create_framebuffer(
 {
 	return utki::make_shared<frame_buffer>(std::move(color), std::move(depth), std::move(stencil));
 }
+
+utki::shared_ref<ruis::render::index_buffer> factory::create_index_buffer(utki::span<const uint16_t> indices)
+{
+	return utki::make_shared<index_buffer>(indices);
+}
+
+utki::shared_ref<ruis::render::index_buffer> factory::create_index_buffer(utki::span<const uint32_t> indices)
+{
+	return utki::make_shared<index_buffer>(indices);
+}
+
+utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
+	rasterimage::format format,
+	rasterimage::dimensioned::dimensions_type dims,
+	texture_2d_parameters params
+)
+{
+	return utki::make_shared<texture_2d>(
+		rasterimage::image_variant(dims, format), //
+		std::move(params)
+	);
+}
+
+utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
+	const rasterimage::image_variant& imvar,
+	texture_2d_parameters params
+)
+{
+	return utki::make_shared<texture_2d>(imvar, std::move(params));
+}
+
+utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
+	rasterimage::image_variant&& imvar,
+	texture_2d_parameters params
+)
+{
+	return utki::make_shared<texture_2d>(
+		std::move(imvar), //
+		std::move(params)
+	);
+}
+
+utki::shared_ref<ruis::render::texture_depth> factory::create_texture_depth(r4::vector2<uint32_t> dims)
+{
+	return utki::make_shared<texture_depth>(dims);
+}
+
+utki::shared_ref<ruis::render::texture_cube> factory::create_texture_cube(
+	rasterimage::image_variant&& positive_x,
+	rasterimage::image_variant&& negative_x,
+	rasterimage::image_variant&& positive_y,
+	rasterimage::image_variant&& negative_y,
+	rasterimage::image_variant&& positive_z,
+	rasterimage::image_variant&& negative_z
+)
+{
+	return utki::make_shared<texture_cube>(
+		std::move(positive_x),
+		std::move(negative_x),
+		std::move(positive_y),
+		std::move(negative_y),
+		std::move(positive_z),
+		std::move(negative_z)
+	);
+}
+
+utki::shared_ref<ruis::render::vertex_array> factory::create_vertex_array(
+	std::vector<utki::shared_ref<const ruis::render::vertex_buffer>> buffers,
+	const utki::shared_ref<const ruis::render::index_buffer>& indices,
+	ruis::render::vertex_array::mode rendering_mode
+)
+{
+	return utki::make_shared<vertex_array>(
+		std::move(buffers), //
+		indices,
+		rendering_mode
+	);
+}
+
+utki::shared_ref<ruis::render::vertex_buffer> factory::create_vertex_buffer(utki::span<const float> vertices)
+{
+	return utki::make_shared<vertex_buffer>(vertices);
+}
+
+utki::shared_ref<ruis::render::vertex_buffer> factory::create_vertex_buffer(
+	utki::span<const r4::vector2<float>> vertices
+)
+{
+	return utki::make_shared<vertex_buffer>(vertices);
+}
+
+utki::shared_ref<ruis::render::vertex_buffer> factory::create_vertex_buffer(
+	utki::span<const r4::vector3<float>> vertices
+)
+{
+	return utki::make_shared<vertex_buffer>(vertices);
+}
+
+utki::shared_ref<ruis::render::vertex_buffer> factory::create_vertex_buffer(
+	utki::span<const r4::vector4<float>> vertices
+)
+{
+	return utki::make_shared<vertex_buffer>(vertices);
+}
