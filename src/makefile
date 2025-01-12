@@ -19,7 +19,7 @@ else ifeq ($(os), macosx)
     this_ldlibs +=
 endif
 
-this_ldlibs += -lruis -lutki
+this_ldlibs += -lruis -lutki -lrasterimage
 
 $(eval $(prorab-build-lib))
 
