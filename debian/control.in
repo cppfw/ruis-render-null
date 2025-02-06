@@ -8,8 +8,7 @@ Build-Depends:
 	prorab-extra,
 	clang-format,
 	clang-tidy,
-	libruis-dev (>= 0.5.210),
-	libglew-dev
+	libruis-dev (>= 0.5.210)
 Build-Depends-Indep: doxygen
 Standards-Version: 3.9.2
 
