@@ -6,4 +6,4 @@ project(PackageTest CXX)
 find_package(ruis CONFIG REQUIRED)
 
 add_executable(example example.cpp)
-target_link_libraries(example ruis-render-null::ruis-render-null)
+target_link_libraries(example ruisrendernull::ruisrendernull)
