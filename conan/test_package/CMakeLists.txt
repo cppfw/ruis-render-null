@@ -3,7 +3,7 @@ project(PackageTest CXX)
 
 # set(CMAKE_VERBOSE_MAKEFILE on)
 
-find_package(ruis CONFIG REQUIRED)
+find_package(ruis-render-null CONFIG REQUIRED)
 
 add_executable(example example.cpp)
-target_link_libraries(example ruisrendernull::ruisrendernull)
+target_link_libraries(example ruis-render-null::ruis-render-null)
