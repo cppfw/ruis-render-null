@@ -1,3 +1,9 @@
+libruis-render-null (0.0.6) unstable; urgency=medium
+
+  * conan
+
+ -- Ivan Gagis <igagis@gmail.com>  Thu, 06 Feb 2025 16:37:59 +0200
+
 libruis-render-null (0.0.5) unstable; urgency=medium
 
   * update
