@@ -34,7 +34,8 @@ public:
 	const rasterimage::image_variant image;
 
 	texture_2d(
-		rasterimage::image_variant image, //
+		utki::shared_ref<ruis::render::renderer> renderer, //
+		rasterimage::image_variant image,
 		ruis::render::factory::texture_2d_parameters params
 	);
 };

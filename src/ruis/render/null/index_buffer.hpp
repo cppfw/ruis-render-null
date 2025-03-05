@@ -38,8 +38,14 @@ public:
 		std::vector<uint32_t>>
 		indices;
 
-	index_buffer(utki::span<const uint16_t> indices);
-	index_buffer(utki::span<const uint32_t> indices);
+	index_buffer(
+		utki::shared_ref<ruis::render::renderer> renderer, //
+		utki::span<const uint16_t> indices
+	);
+	index_buffer(
+		utki::shared_ref<ruis::render::renderer> renderer, //
+		utki::span<const uint32_t> indices
+	);
 };
 
 } // namespace ruis::render::null

@@ -33,6 +33,7 @@ public:
 	const std::shared_ptr<ruis::render::texture_stencil> stencil;
 
 	frame_buffer(
+		utki::shared_ref<ruis::render::renderer> renderer,
 		std::shared_ptr<ruis::render::texture_2d> color,
 		std::shared_ptr<ruis::render::texture_depth> depth,
 		std::shared_ptr<ruis::render::texture_stencil> stencil

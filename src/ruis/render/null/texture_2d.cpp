@@ -24,10 +24,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 texture_2d::texture_2d(
-	rasterimage::image_variant image, //
+	utki::shared_ref<ruis::render::renderer> renderer, //
+	rasterimage::image_variant image,
 	ruis::render::factory::texture_2d_parameters params
 ) :
-	ruis::render::texture_2d(image.dims()),
+	ruis::render::texture_2d(
+		std::move(renderer), //
+		image.dims()
+	),
 	params(std::move(params)),
 	image(std::move(image))
 {}

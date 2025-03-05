@@ -24,9 +24,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 frame_buffer::frame_buffer(
+	utki::shared_ref<ruis::render::renderer> renderer,
 	std::shared_ptr<ruis::render::texture_2d> color,
 	std::shared_ptr<ruis::render::texture_depth> depth,
 	std::shared_ptr<ruis::render::texture_stencil> stencil
 ) :
-	ruis::render::frame_buffer(std::move(color), std::move(depth), std::move(stencil))
+	ruis::render::frame_buffer(
+		std::move(renderer), //
+		std::move(color),
+		std::move(depth),
+		std::move(stencil)
+	)
 {}

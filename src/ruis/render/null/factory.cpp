@@ -29,17 +29,28 @@ utki::shared_ref<ruis::render::frame_buffer> factory::create_framebuffer(
 	std::shared_ptr<ruis::render::texture_stencil> stencil
 )
 {
-	return utki::make_shared<frame_buffer>(std::move(color), std::move(depth), std::move(stencil));
+	return utki::make_shared<frame_buffer>(
+		this->get_renderer(), //
+		std::move(color),
+		std::move(depth),
+		std::move(stencil)
+	);
 }
 
 utki::shared_ref<ruis::render::index_buffer> factory::create_index_buffer(utki::span<const uint16_t> indices)
 {
-	return utki::make_shared<index_buffer>(indices);
+	return utki::make_shared<index_buffer>(
+		this->get_renderer(), //
+		indices
+	);
 }
 
 utki::shared_ref<ruis::render::index_buffer> factory::create_index_buffer(utki::span<const uint32_t> indices)
 {
-	return utki::make_shared<index_buffer>(indices);
+	return utki::make_shared<index_buffer>(
+		this->get_renderer(), //
+		indices
+	);
 }
 
 utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
@@ -49,7 +60,8 @@ utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
 )
 {
 	return utki::make_shared<texture_2d>(
-		rasterimage::image_variant(dims, format), //
+		this->get_renderer(), //
+		rasterimage::image_variant(dims, format),
 		std::move(params)
 	);
 }
@@ -59,7 +71,11 @@ utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
 	texture_2d_parameters params
 )
 {
-	return utki::make_shared<texture_2d>(imvar, std::move(params));
+	return utki::make_shared<texture_2d>(
+		this->get_renderer(), //
+		imvar,
+		std::move(params)
+	);
 }
 
 utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
@@ -68,7 +84,8 @@ utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
 )
 {
 	return utki::make_shared<texture_2d>(
-		std::move(imvar), //
+		this->get_renderer(), //
+		std::move(imvar),
 		std::move(params)
 	);
 }
