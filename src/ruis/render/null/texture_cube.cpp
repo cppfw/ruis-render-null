@@ -24,6 +24,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 texture_cube::texture_cube(
+	utki::shared_ref<ruis::render::renderer> renderer, //
 	rasterimage::image_variant&& positive_x,
 	rasterimage::image_variant&& negative_x,
 	rasterimage::image_variant&& positive_y,
@@ -31,7 +32,7 @@ texture_cube::texture_cube(
 	rasterimage::image_variant&& positive_z,
 	rasterimage::image_variant&& negative_z
 ) :
-	ruis::render::texture_cube(),
+	ruis::render::texture_cube(std::move(renderer)),
 	positive_x(std::move(positive_x)),
 	negative_x(std::move(negative_x)),
 	positive_y(std::move(positive_y)),

@@ -92,7 +92,10 @@ utki::shared_ref<ruis::render::texture_2d> factory::create_texture_2d(
 
 utki::shared_ref<ruis::render::texture_depth> factory::create_texture_depth(r4::vector2<uint32_t> dims)
 {
-	return utki::make_shared<texture_depth>(dims);
+	return utki::make_shared<texture_depth>(
+		this->get_renderer(), //
+		dims
+	);
 }
 
 utki::shared_ref<ruis::render::texture_cube> factory::create_texture_cube(
@@ -105,6 +108,7 @@ utki::shared_ref<ruis::render::texture_cube> factory::create_texture_cube(
 )
 {
 	return utki::make_shared<texture_cube>(
+		this->get_renderer(), //
 		std::move(positive_x),
 		std::move(negative_x),
 		std::move(positive_y),

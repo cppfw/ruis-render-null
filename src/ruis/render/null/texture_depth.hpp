@@ -28,7 +28,10 @@ namespace ruis::render::null {
 class texture_depth : public ruis::render::texture_depth
 {
 public:
-	texture_depth(r4::vector2<uint32_t> dims);
+	texture_depth(
+		utki::shared_ref<ruis::render::renderer> renderer, //
+		r4::vector2<uint32_t> dims
+	);
 };
 
 } // namespace ruis::render::null
