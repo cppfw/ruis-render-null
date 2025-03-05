@@ -125,7 +125,8 @@ utki::shared_ref<ruis::render::vertex_array> factory::create_vertex_array(
 )
 {
 	return utki::make_shared<vertex_array>(
-		std::move(buffers), //
+		this->get_renderer(), //
+		std::move(buffers),
 		std::move(indices),
 		rendering_mode
 	);
@@ -133,26 +134,38 @@ utki::shared_ref<ruis::render::vertex_array> factory::create_vertex_array(
 
 utki::shared_ref<ruis::render::vertex_buffer> factory::create_vertex_buffer(utki::span<const float> vertices)
 {
-	return utki::make_shared<vertex_buffer>(vertices);
+	return utki::make_shared<vertex_buffer>(
+		this->get_renderer(), //
+		vertices
+	);
 }
 
 utki::shared_ref<ruis::render::vertex_buffer> factory::create_vertex_buffer(
 	utki::span<const r4::vector2<float>> vertices
 )
 {
-	return utki::make_shared<vertex_buffer>(vertices);
+	return utki::make_shared<vertex_buffer>(
+		this->get_renderer(), //
+		vertices
+	);
 }
 
 utki::shared_ref<ruis::render::vertex_buffer> factory::create_vertex_buffer(
 	utki::span<const r4::vector3<float>> vertices
 )
 {
-	return utki::make_shared<vertex_buffer>(vertices);
+	return utki::make_shared<vertex_buffer>(
+		this->get_renderer(), //
+		vertices
+	);
 }
 
 utki::shared_ref<ruis::render::vertex_buffer> factory::create_vertex_buffer(
 	utki::span<const r4::vector4<float>> vertices
 )
 {
-	return utki::make_shared<vertex_buffer>(vertices);
+	return utki::make_shared<vertex_buffer>(
+		this->get_renderer(), //
+		vertices
+	);
 }

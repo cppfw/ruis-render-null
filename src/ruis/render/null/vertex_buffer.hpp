@@ -40,10 +40,22 @@ public:
 		std::vector<r4::vector4<float>>>
 		vertices;
 
-	vertex_buffer(utki::span<const float> vertices);
-	vertex_buffer(utki::span<const r4::vector2<float>> vertices);
-	vertex_buffer(utki::span<const r4::vector3<float>> vertices);
-	vertex_buffer(utki::span<const r4::vector4<float>> vertices);
+	vertex_buffer(
+		utki::shared_ref<ruis::render::renderer> renderer, //
+		utki::span<const float> vertices
+	);
+	vertex_buffer(
+		utki::shared_ref<ruis::render::renderer> renderer, //
+		utki::span<const r4::vector2<float>> vertices
+	);
+	vertex_buffer(
+		utki::shared_ref<ruis::render::renderer> renderer, //
+		utki::span<const r4::vector3<float>> vertices
+	);
+	vertex_buffer(
+		utki::shared_ref<ruis::render::renderer> renderer, //
+		utki::span<const r4::vector4<float>> vertices
+	);
 };
 
 } // namespace ruis::render::null
