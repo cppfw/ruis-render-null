@@ -34,6 +34,10 @@ namespace ruis::render::null {
 class factory : public ruis::render::factory
 {
 public:
+	factory(utki::shared_ref<ruis::render::context> render_context) :
+		ruis::render::factory(std::move(render_context))
+	{}
+
 	utki::shared_ref<ruis::render::frame_buffer> create_framebuffer(
 		std::shared_ptr<ruis::render::texture_2d> color,
 		std::shared_ptr<ruis::render::texture_depth> depth,

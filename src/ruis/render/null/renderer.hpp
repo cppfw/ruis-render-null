@@ -25,6 +25,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <ruis/render/renderer.hpp>
 
+#include "context.hpp"
 #include "factory.hpp"
 
 namespace ruis::render::null {
@@ -34,7 +35,7 @@ class renderer : public ruis::render::renderer
 public:
 	renderer() :
 		ruis::render::renderer(
-			std::make_unique<ruis::render::null::factory>(), //
+			std::make_unique<ruis::render::null::factory>(utki::make_shared<ruis::render::null::context>()), //
 			parameters()
 		)
 	{}
