@@ -37,7 +37,7 @@ public:
 	const rasterimage::image_variant negative_z;
 
 	texture_cube(
-		utki::shared_ref<ruis::render::renderer> renderer, //
+		utki::shared_ref<ruis::render::context> render_context, //
 		rasterimage::image_variant&& positive_x,
 		rasterimage::image_variant&& negative_x,
 		rasterimage::image_variant&& positive_y,

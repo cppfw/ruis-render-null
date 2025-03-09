@@ -34,7 +34,7 @@ public:
 	const rasterimage::image_variant image;
 
 	texture_2d(
-		utki::shared_ref<ruis::render::renderer> renderer, //
+		utki::shared_ref<ruis::render::context> render_context, //
 		rasterimage::image_variant image,
 		ruis::render::factory::texture_2d_parameters params
 	);
