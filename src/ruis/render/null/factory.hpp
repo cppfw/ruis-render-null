@@ -47,11 +47,6 @@ public:
 	utki::shared_ref<ruis::render::index_buffer> create_index_buffer(utki::span<const uint16_t> indices) override;
 	utki::shared_ref<ruis::render::index_buffer> create_index_buffer(utki::span<const uint32_t> indices) override;
 
-	utki::shared_ref<ruis::render::factory::shaders> create_shaders() override
-	{
-		return utki::make_shared<ruis::render::factory::shaders>();
-	}
-
 	utki::shared_ref<ruis::render::texture_2d> create_texture_2d(
 		rasterimage::format format,
 		rasterimage::dimensioned::dimensions_type dims,

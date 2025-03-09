@@ -28,6 +28,10 @@ namespace ruis::render::null {
 class context : public ruis::render::context
 {
 public:
+	utki::shared_ref<ruis::render::context::shaders> create_shaders() override
+	{
+		return utki::make_shared<ruis::render::context::shaders>();
+	}
 };
 
 } // namespace ruis::render::null
