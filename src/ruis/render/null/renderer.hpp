@@ -29,66 +29,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 namespace ruis::render::null {
 
+// TODO: remove
 class renderer : public ruis::render::renderer
 {
 public:
 	renderer() :
-		ruis::render::renderer(
-			utki::make_shared<ruis::render::null::context>(), //
-			parameters()
-		)
+		ruis::render::renderer(utki::make_shared<ruis::render::null::context>())
 	{}
-
-	void clear_framebuffer_color() override {}
-
-	void clear_framebuffer_depth() override {}
-
-	void clear_framebuffer_stencil() override {}
-
-	r4::vector2<uint32_t> to_window_coords(ruis::vec2 point) const override
-	{
-		return {0, 0};
-	}
-
-	r4::rectangle<uint32_t> get_scissor() const override
-	{
-		return {0, 0};
-	}
-
-	r4::rectangle<uint32_t> get_viewport() const override
-	{
-		return {0, 0};
-	}
-
-	bool is_scissor_enabled() const noexcept override
-	{
-		return false;
-	}
-
-	void enable_blend(bool enable) override {}
-
-	void set_blend_func(
-		blend_factor src_color,
-		blend_factor dst_color,
-		blend_factor src_alpha,
-		blend_factor dst_alpha
-	) override
-	{}
-
-	void set_framebuffer_internal(ruis::render::frame_buffer* fb) override {}
-
-	void enable_scissor(bool enable) override {}
-
-	void set_scissor(r4::rectangle<uint32_t> r) override {}
-
-	void set_viewport(r4::rectangle<uint32_t> r) override {}
-
-	bool is_depth_enabled() const noexcept override
-	{
-		return false;
-	}
-
-	void enable_depth(bool enable) override {}
 };
 
 } // namespace ruis::render::null
