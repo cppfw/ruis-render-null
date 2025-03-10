@@ -26,7 +26,7 @@ using namespace ruis::render::null;
 texture_2d::texture_2d(
 	utki::shared_ref<ruis::render::context> render_context, //
 	rasterimage::image_variant image,
-	ruis::render::factory::texture_2d_parameters params
+	ruis::render::context::texture_2d_parameters params
 ) :
 	ruis::render::texture_2d(
 		std::move(render_context), //
