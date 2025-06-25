@@ -33,6 +33,7 @@ Section: debug
 Architecture: all
 Depends:
 	libruis-render-null$(soname)-dbgsym (= ${binary:Version}),
+	libruis-render-null-dbg$(soname)-dbgsym (= ${binary:Version}),
 	${misc:Depends}
 Description: debugging sources for libruis-render-null$(soname) package.
 
@@ -41,6 +42,7 @@ Section: libdevel
 Architecture: any
 Depends:
 	libruis-render-null$(soname) (= ${binary:Version}),
+	libruis-render-null-dbg$(soname) (= ${binary:Version}),
 	libruis-dev,
 	${misc:Depends}
 Suggests: libruis-render-null-doc
