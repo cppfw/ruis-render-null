@@ -19,6 +19,15 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Null renderer for ruis.
  Null renderer for ruis GUI library.
 
+Package: libruis-render-null-dbg$(soname)
+Section: libs
+Architecture: any
+Depends:
+	${shlibs:Depends},
+	${misc:Depends}
+Description: Null renderer for ruis.
+	Debug version of libruis-render-null.
+
 Package: libruis-render-null$(soname)-dbgsrc
 Section: debug
 Architecture: all
