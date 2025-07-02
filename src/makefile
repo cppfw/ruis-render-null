@@ -13,10 +13,9 @@ this_soname := $(shell cat $(d)soname.txt)
 
 this_srcs += $(call prorab-src-dir, $(this_src_dir))
 
-# TODO: add linking to dbg versions of all libs
-this_ldlibs += -lruis$(this_dbg)
-this_ldlibs += -lutki$(this_dbg)
-this_ldlibs += -lrasterimage
+this_ldlibs += -l ruis$(this_dbg)
+this_ldlibs += -l utki$(this_dbg)
+this_ldlibs += -l rasterimage$(this_dbg)
 
 $(eval $(prorab-build-lib))
 

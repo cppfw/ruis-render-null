@@ -15,7 +15,9 @@ Standards-Version: 3.9.2
 Package: libruis-render-null$(soname)
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+	${shlibs:Depends},
+	${misc:Depends}
 Description: Null renderer for ruis.
  Null renderer for ruis GUI library.
 
@@ -47,11 +49,11 @@ Depends:
 	${misc:Depends}
 Suggests: libruis-render-null-doc
 Description: Null renderer for ruis.
- Null renderer for ruis GUI library.
+	Null renderer for ruis GUI library.
 
 Package: libruis-render-null-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}
 Description: documentation for libruis-render-null library.
- For more details see description to libruis-render-null-dev package.
+	For more details see description to libruis-render-null-dev package.
