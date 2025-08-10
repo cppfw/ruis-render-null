@@ -1,5 +1,7 @@
 #include <ruis/render/null/context.hpp>
 
+#include <iostream>
+
 int main(int argc, const char** argv){
 	auto c = utki::make_shared<ruis::render::null::context>();
 

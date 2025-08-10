@@ -4,6 +4,8 @@
 
 #include <ruis/render/null/context.hpp>
 
+#include <iostream>
+
 int main(int argc, const char** argv){
     ruis::render::null::context c;
 
