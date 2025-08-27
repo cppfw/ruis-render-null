@@ -29,7 +29,7 @@ class texture_depth : public ruis::render::texture_depth
 {
 public:
 	texture_depth(
-		utki::shared_ref<ruis::render::context> render_context, //
+		utki::shared_ref<ruis::render::context> rendering_context, //
 		r4::vector2<uint32_t> dims
 	);
 };

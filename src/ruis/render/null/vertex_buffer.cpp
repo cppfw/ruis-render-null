@@ -24,44 +24,44 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 vertex_buffer::vertex_buffer(
-	utki::shared_ref<ruis::render::context> render_context, //
+	utki::shared_ref<ruis::render::context> rendering_context, //
 	utki::span<const float> vertices
 ) :
 	ruis::render::vertex_buffer(
-		std::move(render_context), //
+		std::move(rendering_context), //
 		vertices.size()
 	),
 	vertices(utki::make_vector(vertices))
 {}
 
 vertex_buffer::vertex_buffer(
-	utki::shared_ref<ruis::render::context> render_context, //
+	utki::shared_ref<ruis::render::context> rendering_context, //
 	utki::span<const r4::vector2<float>> vertices
 ) :
 	ruis::render::vertex_buffer(
-		std::move(render_context), //
+		std::move(rendering_context), //
 		vertices.size()
 	),
 	vertices(utki::make_vector(vertices))
 {}
 
 vertex_buffer::vertex_buffer(
-	utki::shared_ref<ruis::render::context> render_context, //
+	utki::shared_ref<ruis::render::context> rendering_context, //
 	utki::span<const r4::vector3<float>> vertices
 ) :
 	ruis::render::vertex_buffer(
-		std::move(render_context), //
+		std::move(rendering_context), //
 		vertices.size()
 	),
 	vertices(utki::make_vector(vertices))
 {}
 
 vertex_buffer::vertex_buffer(
-	utki::shared_ref<ruis::render::context> render_context, //
+	utki::shared_ref<ruis::render::context> rendering_context, //
 	utki::span<const r4::vector4<float>> vertices
 ) :
 	ruis::render::vertex_buffer(
-		std::move(render_context), //
+		std::move(rendering_context), //
 		vertices.size()
 	),
 	vertices(utki::make_vector(vertices))

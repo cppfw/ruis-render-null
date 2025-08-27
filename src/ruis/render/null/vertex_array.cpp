@@ -24,13 +24,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 vertex_array::vertex_array(
-	utki::shared_ref<ruis::render::context> render_context, //
+	utki::shared_ref<ruis::render::context> rendering_context, //
 	std::vector<utki::shared_ref<const ruis::render::vertex_buffer>> buffers,
 	utki::shared_ref<const ruis::render::index_buffer> indices,
 	ruis::render::vertex_array::mode rendering_mode
 ) :
 	ruis::render::vertex_array(
-		std::move(render_context), //
+		std::move(rendering_context), //
 		std::move(buffers),
 		std::move(indices),
 		rendering_mode

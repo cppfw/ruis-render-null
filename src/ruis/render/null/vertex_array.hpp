@@ -32,7 +32,7 @@ class vertex_array : public ruis::render::vertex_array
 {
 public:
 	vertex_array(
-		utki::shared_ref<ruis::render::context> render_context, //
+		utki::shared_ref<ruis::render::context> rendering_context, //
 		std::vector<utki::shared_ref<const ruis::render::vertex_buffer>> buffers,
 		utki::shared_ref<const ruis::render::index_buffer> indices,
 		ruis::render::vertex_array::mode rendering_mode

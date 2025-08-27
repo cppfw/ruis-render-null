@@ -24,12 +24,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 texture_2d::texture_2d(
-	utki::shared_ref<ruis::render::context> render_context, //
+	utki::shared_ref<ruis::render::context> rendering_context, //
 	rasterimage::image_variant image,
 	ruis::render::context::texture_2d_parameters params
 ) :
 	ruis::render::texture_2d(
-		std::move(render_context), //
+		std::move(rendering_context), //
 		image.dims()
 	),
 	params(std::move(params)),
