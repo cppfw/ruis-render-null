@@ -24,7 +24,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 texture_cube::texture_cube(
-	utki::shared_ref<ruis::render::context> rendering_context, //
+	utki::shared_ref<const ruis::render::context> rendering_context, //
 	rasterimage::image_variant&& positive_x,
 	rasterimage::image_variant&& negative_x,
 	rasterimage::image_variant&& positive_y,

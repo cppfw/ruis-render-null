@@ -41,19 +41,19 @@ public:
 		vertices;
 
 	vertex_buffer(
-		utki::shared_ref<ruis::render::context> rendering_context, //
+		utki::shared_ref<const ruis::render::context> rendering_context, //
 		utki::span<const float> vertices
 	);
 	vertex_buffer(
-		utki::shared_ref<ruis::render::context> rendering_context, //
+		utki::shared_ref<const ruis::render::context> rendering_context, //
 		utki::span<const r4::vector2<float>> vertices
 	);
 	vertex_buffer(
-		utki::shared_ref<ruis::render::context> rendering_context, //
+		utki::shared_ref<const ruis::render::context> rendering_context, //
 		utki::span<const r4::vector3<float>> vertices
 	);
 	vertex_buffer(
-		utki::shared_ref<ruis::render::context> rendering_context, //
+		utki::shared_ref<const ruis::render::context> rendering_context, //
 		utki::span<const r4::vector4<float>> vertices
 	);
 };

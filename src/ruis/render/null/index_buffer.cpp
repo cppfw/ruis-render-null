@@ -24,7 +24,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 index_buffer::index_buffer(
-	utki::shared_ref<ruis::render::context> rendering_context, //
+	utki::shared_ref<const ruis::render::context> rendering_context, //
 	utki::span<const uint16_t> indices
 ) :
 	ruis::render::index_buffer(std::move(rendering_context)),
@@ -32,7 +32,7 @@ index_buffer::index_buffer(
 {}
 
 index_buffer::index_buffer(
-	utki::shared_ref<ruis::render::context> rendering_context, //
+	utki::shared_ref<const ruis::render::context> rendering_context, //
 	utki::span<const uint32_t> indices
 ) :
 	ruis::render::index_buffer(std::move(rendering_context)),

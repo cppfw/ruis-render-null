@@ -45,7 +45,7 @@ utki::shared_ref<ruis::render::frame_buffer> context::make_framebuffer(
 	);
 }
 
-utki::shared_ref<ruis::render::index_buffer> context::make_index_buffer(utki::span<const uint16_t> indices)
+utki::shared_ref<ruis::render::index_buffer> context::make_index_buffer(utki::span<const uint16_t> indices) const
 {
 	return utki::make_shared<index_buffer>(
 		this->get_shared_ref(), //
@@ -53,7 +53,7 @@ utki::shared_ref<ruis::render::index_buffer> context::make_index_buffer(utki::sp
 	);
 }
 
-utki::shared_ref<ruis::render::index_buffer> context::make_index_buffer(utki::span<const uint32_t> indices)
+utki::shared_ref<ruis::render::index_buffer> context::make_index_buffer(utki::span<const uint32_t> indices) const
 {
 	return utki::make_shared<index_buffer>(
 		this->get_shared_ref(), //
@@ -65,7 +65,7 @@ utki::shared_ref<ruis::render::texture_2d> context::make_texture_2d(
 	rasterimage::format format,
 	rasterimage::dimensioned::dimensions_type dims,
 	texture_2d_parameters params
-)
+) const
 {
 	return utki::make_shared<texture_2d>(
 		this->get_shared_ref(), //
@@ -77,7 +77,7 @@ utki::shared_ref<ruis::render::texture_2d> context::make_texture_2d(
 utki::shared_ref<ruis::render::texture_2d> context::make_texture_2d(
 	const rasterimage::image_variant& imvar,
 	texture_2d_parameters params
-)
+) const
 {
 	return utki::make_shared<texture_2d>(
 		this->get_shared_ref(), //
@@ -89,7 +89,7 @@ utki::shared_ref<ruis::render::texture_2d> context::make_texture_2d(
 utki::shared_ref<ruis::render::texture_2d> context::make_texture_2d(
 	rasterimage::image_variant&& imvar,
 	texture_2d_parameters params
-)
+) const
 {
 	return utki::make_shared<texture_2d>(
 		this->get_shared_ref(), //
@@ -98,7 +98,7 @@ utki::shared_ref<ruis::render::texture_2d> context::make_texture_2d(
 	);
 }
 
-utki::shared_ref<ruis::render::texture_depth> context::make_texture_depth(r4::vector2<uint32_t> dims)
+utki::shared_ref<ruis::render::texture_depth> context::make_texture_depth(r4::vector2<uint32_t> dims) const
 {
 	return utki::make_shared<texture_depth>(
 		this->get_shared_ref(), //
@@ -113,7 +113,7 @@ utki::shared_ref<ruis::render::texture_cube> context::make_texture_cube(
 	rasterimage::image_variant&& negative_y,
 	rasterimage::image_variant&& positive_z,
 	rasterimage::image_variant&& negative_z
-)
+) const
 {
 	return utki::make_shared<texture_cube>(
 		this->get_shared_ref(), //
@@ -130,7 +130,7 @@ utki::shared_ref<ruis::render::vertex_array> context::make_vertex_array(
 	std::vector<utki::shared_ref<const ruis::render::vertex_buffer>> buffers,
 	utki::shared_ref<const ruis::render::index_buffer> indices,
 	ruis::render::vertex_array::mode rendering_mode
-)
+) const
 {
 	return utki::make_shared<vertex_array>(
 		this->get_shared_ref(), //
@@ -140,7 +140,7 @@ utki::shared_ref<ruis::render::vertex_array> context::make_vertex_array(
 	);
 }
 
-utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer(utki::span<const float> vertices)
+utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer(utki::span<const float> vertices) const
 {
 	return utki::make_shared<vertex_buffer>(
 		this->get_shared_ref(), //
@@ -148,7 +148,9 @@ utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer(utki::
 	);
 }
 
-utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer(utki::span<const r4::vector2<float>> vertices)
+utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer( //
+	utki::span<const r4::vector2<float>> vertices
+) const
 {
 	return utki::make_shared<vertex_buffer>(
 		this->get_shared_ref(), //
@@ -156,7 +158,9 @@ utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer(utki::
 	);
 }
 
-utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer(utki::span<const r4::vector3<float>> vertices)
+utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer( //
+	utki::span<const r4::vector3<float>> vertices
+) const
 {
 	return utki::make_shared<vertex_buffer>(
 		this->get_shared_ref(), //
@@ -164,7 +168,9 @@ utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer(utki::
 	);
 }
 
-utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer(utki::span<const r4::vector4<float>> vertices)
+utki::shared_ref<ruis::render::vertex_buffer> context::make_vertex_buffer( //
+	utki::span<const r4::vector4<float>> vertices
+) const
 {
 	return utki::make_shared<vertex_buffer>(
 		this->get_shared_ref(), //
