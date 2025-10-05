@@ -1,8 +1,9 @@
-libruis-render-null (0.1.0) UNRELEASED; urgency=medium
+libruis-render-null (0.2.0) UNRELEASED; urgency=medium
 
   * multiwindow
+  * multiwindow
 
- -- Ivan Gagis <igagis@gmail.com>  Sun, 05 Oct 2025 19:26:47 +0300
+ -- Ivan Gagis <igagis@gmail.com>  Sun, 05 Oct 2025 20:35:47 +0300
 
 libruis-render-null (0.0.16) unstable; urgency=medium
 
