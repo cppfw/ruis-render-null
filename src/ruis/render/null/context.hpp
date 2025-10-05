@@ -28,9 +28,11 @@ namespace ruis::render::null {
 class context : public ruis::render::context
 {
 public:
-	context() :
+	context(
+		utki::shared_ref<ruis::render::native_window> native_window = utki::make_shared<ruis::render::native_window>()
+	) :
 		ruis::render::context(
-			utki::make_shared<ruis::render::native_window>(), //
+			std::move(native_window), //
 			parameters()
 		)
 	{}
