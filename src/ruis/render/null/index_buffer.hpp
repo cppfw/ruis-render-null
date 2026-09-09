@@ -39,11 +39,11 @@ public:
 		indices;
 
 	index_buffer(
-		utki::shared_ref<const ruis::render::context> rendering_context, //
+		const utki::shared_ref<const ruis::render::context>& rendering_context, //
 		utki::span<const uint16_t> indices
 	);
 	index_buffer(
-		utki::shared_ref<const ruis::render::context> rendering_context, //
+		const utki::shared_ref<const ruis::render::context>& rendering_context, //
 		utki::span<const uint32_t> indices
 	);
 };
