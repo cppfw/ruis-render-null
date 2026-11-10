@@ -21,6 +21,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include "frame_buffer.hpp"
 
+#include "texture_2d.hpp"
+
 using namespace ruis::render::null;
 
 frame_buffer::frame_buffer(
@@ -36,3 +38,13 @@ frame_buffer::frame_buffer(
 		std::move(stencil)
 	)
 {}
+
+rasterimage::image_variant frame_buffer::get_color_pixels()
+{
+	// This class re-declares `color`, shadowing the base member; reach the one the base ctor
+	// initializes via the base-qualified name, then return the image stored by the null texture.
+	const auto& base_color = ruis::render::frame_buffer::color;
+	// NOLINTNEXTLINE(cppcoreguidelines-pro-type-static-cast-downcast)
+	const auto& tex = static_cast<const texture_2d&>(*base_color);
+	return tex.image;
+}

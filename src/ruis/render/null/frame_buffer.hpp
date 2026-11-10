@@ -38,6 +38,8 @@ public:
 		std::shared_ptr<ruis::render::texture_depth> depth,
 		std::shared_ptr<ruis::render::texture_stencil> stencil
 	);
+
+	rasterimage::image_variant get_color_pixels() override;
 };
 
 } // namespace ruis::render::null
