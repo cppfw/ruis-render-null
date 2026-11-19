@@ -24,16 +24,21 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <rasterimage/image_variant.hpp>
 #include <ruis/render/context.hpp>
 
+#include "factory.hpp"
+
 namespace ruis::render::null {
 
 class context : public ruis::render::context
 {
 public:
 	context(
-		utki::shared_ref<ruis::render::native_window> native_window = utki::make_shared<ruis::render::native_window>()
+		utki::shared_ref<ruis::render::native_window> native_window =
+			utki::make_shared<ruis::render::native_window>(), //
+		utki::shared_ref<const ruis::render::factory> factory = utki::make_shared<null::factory>()
 	) :
 		ruis::render::context(
 			std::move(native_window), //
+			std::move(factory), //
 			parameters()
 		)
 	{}
@@ -41,68 +46,11 @@ public:
 	// ===============================
 	// ====== factory functions ======
 
-	utki::shared_ref<ruis::render::context::shaders> make_shaders() const override
-	{
-		return utki::make_shared<ruis::render::context::shaders>();
-	}
-
 	utki::shared_ref<ruis::render::frame_buffer> make_framebuffer(
 		std::shared_ptr<ruis::render::texture_2d> color,
 		std::shared_ptr<ruis::render::texture_depth> depth,
 		std::shared_ptr<ruis::render::texture_stencil> stencil
 	) override;
-
-	utki::shared_ref<ruis::render::index_buffer> make_index_buffer(utki::span<const uint16_t> indices) const override;
-	utki::shared_ref<ruis::render::index_buffer> make_index_buffer(utki::span<const uint32_t> indices) const override;
-
-	utki::shared_ref<ruis::render::texture_2d> make_texture_2d(
-		rasterimage::format format,
-		rasterimage::dimensioned::dimensions_type dims,
-		texture_2d_parameters params
-	) const override;
-
-	utki::shared_ref<ruis::render::texture_2d> make_texture_2d(
-		const rasterimage::image_variant& imvar,
-		texture_2d_parameters params
-	) const override;
-
-	utki::shared_ref<ruis::render::texture_2d> make_texture_2d(
-		rasterimage::image_variant&& imvar,
-		texture_2d_parameters params
-	) const override;
-
-	utki::shared_ref<ruis::render::texture_depth> make_texture_depth(r4::vector2<uint32_t> dims) const override;
-
-	utki::shared_ref<ruis::render::texture_cube> make_texture_cube(
-		rasterimage::image_variant&& positive_x,
-		rasterimage::image_variant&& negative_x,
-		rasterimage::image_variant&& positive_y,
-		rasterimage::image_variant&& negative_y,
-		rasterimage::image_variant&& positive_z,
-		rasterimage::image_variant&& negative_z
-	) const override;
-
-	utki::shared_ref<ruis::render::vertex_array> make_vertex_array(
-		std::vector<utki::shared_ref<const ruis::render::vertex_buffer>> buffers,
-		utki::shared_ref<const ruis::render::index_buffer> indices,
-		ruis::render::vertex_array::mode rendering_mode
-	) const override;
-
-	utki::shared_ref<ruis::render::vertex_buffer> make_vertex_buffer( //
-		utki::span<const float> vertices
-	) const override;
-
-	utki::shared_ref<ruis::render::vertex_buffer> make_vertex_buffer( //
-		utki::span<const r4::vector2<float>> vertices
-	) const override;
-
-	utki::shared_ref<ruis::render::vertex_buffer> make_vertex_buffer( //
-		utki::span<const r4::vector3<float>> vertices
-	) const override;
-
-	utki::shared_ref<ruis::render::vertex_buffer> make_vertex_buffer( //
-		utki::span<const r4::vector4<float>> vertices
-	) const override;
 
 	// =====================================
 	// ====== state control functions ======

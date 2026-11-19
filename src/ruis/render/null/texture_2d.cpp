@@ -24,9 +24,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 using namespace ruis::render::null;
 
 texture_2d::texture_2d(
-	const utki::shared_ref<const ruis::render::context>& rendering_context, //
+	const utki::shared_ref<const ruis::render::factory>& rendering_context, //
 	rasterimage::image_variant image,
-	ruis::render::context::texture_2d_parameters params
+	ruis::render::factory::texture_2d_parameters params
 ) :
 	ruis::render::texture_2d(
 		rendering_context, //
