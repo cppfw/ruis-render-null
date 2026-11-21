@@ -30,13 +30,13 @@ namespace ruis::render::null {
 class texture_2d : public ruis::render::texture_2d
 {
 public:
-	const ruis::render::context::texture_2d_parameters params;
+	const ruis::render::factory::texture_2d_parameters params;
 	const rasterimage::image_variant image;
 
 	texture_2d(
-		const utki::shared_ref<const ruis::render::context>& rendering_context, //
+		const utki::shared_ref<const ruis::render::factory>& rendering_context, //
 		rasterimage::image_variant image,
-		ruis::render::context::texture_2d_parameters params
+		ruis::render::factory::texture_2d_parameters params
 	);
 };
 
